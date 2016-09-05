@@ -91,7 +91,7 @@ public class TagsMRTest {
     @Test
     public void testMapReduce() throws IOException {
         IntStream.range(0, input.length).forEach(i -> {
-            mapDriver.withInput(new LongWritable(i), new Text(input[i]));
+            mapReduceDriver.withInput(new LongWritable(i), new Text(input[i]));
         });
 
         mapReduceDriver.withOutput(new Text(s1), new IntWritable(1));
